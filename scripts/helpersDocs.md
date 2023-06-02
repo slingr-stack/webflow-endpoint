@@ -1,53 +1,3 @@
----
-title: Webflow endpoint
-keywords:
-last_updated: July 11, 2022
-tags: []
-summary: "Detailed description of the CMS API of the Webflow endpoint."
-sidebar: extensions_sidebar
-permalink: endpoints_webflow.html
-folder: extensions
----
-
-## Overview
-
-This endpoint allows direct access to the [Webflow CMS API](https://developers.webflow.com/),
-however it provides shortcuts and helpers for most common use cases.
-
-Some features available in this endpoint are:
-
-- Authentication and authorization
-- Direct access to the CMS API
-- Helpers for CMS API methods
-
-## Configuration
-
-In order to create a Webflow endpoint in your Slingr app first you must have a Webflow account. Go to the dashboard configuration: "integrations" and create an application filling the fields with the correct information (the redirect URI will be shown in the endpoint configuration create view and the homepage is the runtime of your app). Once you created the application you will be able to see the Client Id and Client Secret on the application details section.You should fill the endpoint fields with this. Then, you will need to go through an Oauth Authorization process with the button "Connect to Webflow", this will give the app an authorization code which is necessary to finally get the access token when the endpoint is deployed. 
-
-### Redirect URI
-
-This URL has to be configured in the app created in the Webflow dashboard.
-
-### Client ID
-
-This value comes from the app created in the Webflow dashboard.
-
-### Client secret
-
-This value comes from the app created in the Webflow dashboard.
-
-### Connect To Webflow
-
-This button will trigger the Oauth connection process and will fill the fields: "Authorization Code".
-
-### Authorization Code
-
-This is used for obtaining the Authorization Token. This field will be automatically filled when doing the Oauth connection with the "Connect to webflow" button
-
-### Webhook Url
-
-This URL is the one that should be used when creating new webhooks.
-
 # Javascript API
 
 The Javascript API of the webflow endpoint has three pieces:
@@ -323,7 +273,9 @@ app.endpoints.webflow.webhooks.remove(siteId, webhookId)
 ```
 ---
 
-## Events
+</details>
 
-You can set a webhooks listener with the Webflow API methods.
+For more information about how shortcuts work, and how they are generated, take a look at the [slingr-helpgen tool](https://github.com/slingr-stack/slingr-helpgen).
 
+## Additional Helpers
+*MANUALLY ADD THE DOCUMENTATION OF THESE HELPERS HERE...*
