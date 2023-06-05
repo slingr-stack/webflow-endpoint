@@ -49,8 +49,14 @@
     }
   ],
   "scripts": [
-    "http-generic-helpers.js",
-    "webflow-helpers.js"
+    "functions",
+    "webflow-old-helpers"
+  ],
+  "flowSteps": [
+    "apiCallWebflow",
+    "listSitesWebflow",
+    "listColectionsWebflow",
+    "createItemWebflow"
   ],
   "configuration": [
     {
