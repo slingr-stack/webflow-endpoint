@@ -1,55 +1,3 @@
----
-title: Webflow endpoint
-keywords:
-last_updated: June 6, 2023
-tags: []
-summary: "Detailed description of the CMS API of the Webflow endpoint."
----
-
-## Overview
-
-This endpoint allows direct access to the [Webflow CMS API](https://developers.webflow.com/),
-however it provides shortcuts and helpers for most common use cases.
-
-Some features available in this endpoint are:
-
-- Authentication and authorization
-- Direct access to the CMS API
-- Helpers for CMS API methods
-
-## Configuration
-
-In order to create a Webflow endpoint in your Slingr app first you must have a Webflow account. 
-Go to the dashboard configuration: "integrations" and create an application filling the fields with the correct information 
-(the redirect URI will be shown in the endpoint configuration create view and the homepage is the runtime of your app). 
-Once you created the application you will be able to see the Client Id and Client Secret on the application details section.
-You should fill the endpoint fields with this. Then, you will need to go through an Oauth Authorization process with the button "Connect to Webflow", 
-this will give the app an authorization code which is necessary to finally get the access token when the endpoint is deployed. 
-
-### Redirect URI
-
-This URL has to be configured in the app created in the Webflow dashboard.
-
-### Client ID
-
-This value comes from the app created in the Webflow dashboard.
-
-### Client secret
-
-This value comes from the app created in the Webflow dashboard.
-
-### Connect To Webflow
-
-This button will trigger the Oauth connection process and will fill the fields: "Authorization Code".
-
-### Authorization Code
-
-This is used for obtaining the Authorization Token. This field will be automatically filled when doing the Oauth connection with the "Connect to webflow" button
-
-### Webhook Url
-
-This URL is the one that should be used when creating new webhooks.
-
 # Javascript API
 
 The Javascript API of the webflow endpoint has three pieces:
@@ -59,7 +7,7 @@ The Javascript API of the webflow endpoint has three pieces:
 - **Additional Helpers**: These helpers provide additional features that facilitate or improves the endpoint usage in SLINGR.
 
 ## HTTP requests
-You can make `GET`,`POST`,`PUT`,`PATCH`,`DELETE` requests to the [webflow API](https://developers.webflow.com/reference) like this:
+You can make `GET`,`POST`,`PUT`,`PATCH`,`DELETE` requests to the [webflow API](API_URL_HERE) like this:
 ```javascript
 var response = app.endpoints.webflow.get('/sites')
 var response = app.endpoints.webflow.post('/sites/:site_id/order/:order_id/unfulfill', body)
@@ -322,10 +270,10 @@ app.endpoints.webflow.sites.webhooks.delete(siteId, webhookId)
 ---
 
 </details>
-
+    
 ## Flow Step
 
-As an alternative option to using scripts, you can make use of Flows and Flow Steps specifically created for the endpoint:
+As an alternative option to using scripts, you can make use of Flows and Flow Steps specifically created for the endpoint: 
 <details>
     <summary>Click here to see the Flow Steps</summary>
 
@@ -500,129 +448,14 @@ For more information about how shortcuts or flow steps works, and how they are g
 
 
 
-### List All Sites
+### Custom Flow Steps Name
 
-Lists all sites in the account.
+Description of Custom Flow Steps
 
-<h3>Outputs</h3>
-
-<table>
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>response</td>
-        <td>object</td>
-        <td>
-            Object resulting from the response to the endpoint call.
-        </td>
-    </tr>
-    </tbody>
-</table>
-
-
-### List All Collections
-
-Lists all collections in one site of the account.
-
-<h3>Outputs</h3>
-
-<table>
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>response</td>
-        <td>object</td>
-        <td>
-            Object resulting from the response to the endpoint call.
-        </td>
-    </tr>
-    </tbody>
-</table>
-
-
-### Create an Item
-
-Creates an item in a collection of a site.
-
-<h3>Inputs</h3>
-
-<table>
-    <thead>
-    <tr>
-        <th>Label</th>
-        <th>Type</th>
-        <th>Required</th>
-        <th>Default</th>
-        <th>Visibility</th>
-        <th>Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>Slug</td>
-        <td> string </td>
-        <td> yes </td>
-        <td> - </td>
-        <td> Always </td>
-        <td>Slug of the item.</td>
-    </tr>
-    <tr>
-        <td>Name</td>
-        <td> string </td>
-        <td> yes </td>
-        <td> - </td>
-        <td> Always </td>
-        <td>Name for the Item.</td>
-    </tr>
-    </tbody>
-</table>
-
-<h3>Outputs</h3>
-
-<table>
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>response</td>
-        <td>object</td>
-        <td>
-            Object resulting from the response to the endpoint call.
-        </td>
-    </tr>
-    </tbody>
-</table>
+*MANUALLY ADD THE DOCUMENTATION OF THESE FLOW STEPS HERE...*
 
 
 </details>
 
 ## Additional Helpers
 *MANUALLY ADD THE DOCUMENTATION OF THESE HELPERS HERE...*
-
-
-## About SLINGR
-
-SLINGR is a low-code rapid application development platform that accelerates development, with robust architecture for integrations and executing custom workflows and automation.
-
-[More info about SLINGR](https://slingr.io)
-
-## License
-
-This endpoint is licensed under the Apache License 2.0. See the `LICENSE` file for more details.
